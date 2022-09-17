@@ -1,6 +1,8 @@
 import { Alert, Box, Button, TextField } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
+const LoginNumber = process.env.REACT_APP_LOGIN;
+console.log(LoginNumber);
 /* 
 
 Yechim React Hook Form kutubxonasidagi reset() funksiyasidan foydalanishdir, agar siz funktsiyani hech qanday parametrsiz ( reset() ) bajarsangiz, forma standart qiymatlariga qaytariladi ,*/
@@ -18,11 +20,16 @@ const UserLogin = () => {
             email: data.get("email"),
             password: data.get("password"),
         }
-        if (actualData.email && actualData.password) {
-            console.log(actualData);
-            document.getElementById("login-form").reset() // reset Funksiyasi submit hodisasidan keyin formni ichidagi inputlarni  maydonini tozalab yuboradi
-            setError({ status: true, msg: "Kirish Mufofaqiyatli amalga oshirildi", type: "success" })
-            navigate("/dashboard")
+        if (actualData.email && actualData.password === LoginNumber) {
+            if(actualData.password === LoginNumber){
+                console.log(actualData);
+                document.getElementById("login-form").reset() // reset Funksiyasi submit hodisasidan keyin formni ichidagi inputlarni  maydonini tozalab yuboradi
+                setError({ status: true, msg: "Kirish Mufofaqiyatli amalga oshirildi", type: "success" })
+                navigate("/dashboard")
+            }else{
+                setError({ status: true, msg: "Loginda yoki emailda xatolik", type: "error" })
+            }
+            
 
         } else {
             setError({ status: true, msg: "Barcha maydonlarni kiritish majburiy !", type: "error" })
