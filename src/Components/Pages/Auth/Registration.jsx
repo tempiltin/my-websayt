@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Alert } from '@mui/material';
-import { CheckBox } from '@mui/icons-material';
+// import { CheckBox } from '@mui/icons-material';
 const Registration = () => {
     const [error, setError] = useState({
         status: false,

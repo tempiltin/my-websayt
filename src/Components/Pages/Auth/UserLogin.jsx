@@ -3,8 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 const LoginNumber = process.env.REACT_APP_LOGIN;
 const LoginEmail = process.env.REACT_APP_EMAIL;
-console.log(LoginNumber);
-console.log(LoginEmail);
+
 /* 
 
 Yechim React Hook Form kutubxonasidagi reset() funksiyasidan foydalanishdir, agar siz funktsiyani hech qanday parametrsiz ( reset() ) bajarsangiz, forma standart qiymatlariga qaytariladi ,*/
@@ -24,7 +23,7 @@ const UserLogin = () => {
         }
         if (actualData.email && actualData.password === LoginNumber) {
             if(actualData.password === LoginNumber && actualData.email === LoginEmail){
-                console.log(actualData);
+            
                 document.getElementById("login-form").reset() // reset Funksiyasi submit hodisasidan keyin formni ichidagi inputlarni  maydonini tozalab yuboradi
                 setError({ status: true, msg: "Kirish Mufofaqiyatli amalga oshirildi", type: "success" })
                 navigate("/dashboard")
