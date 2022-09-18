@@ -57,7 +57,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       <div className="trail">
-	      <div className="pointer pointer1">☺</div>
+	      <div className="pointer pointer1"></div>
       </div>
 
    </>
