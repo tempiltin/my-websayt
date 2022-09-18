@@ -2,6 +2,7 @@
 // import  firebase  from './db/config';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+
 import Layout from './Components/Pages/Layout/Layout';
 import ClientForIndex from './Components/Pages/Client/ClientForIndex';
 import Contact from './Components/Pages/Contact';
@@ -19,10 +20,19 @@ const App = () => {
   //   firebase.auth().onAuthStateChanged(user =>{
   //     setUser(user)
   //   },[])
-
-
-
   // })
+
+  document.addEventListener("mousemove", mouseMove)
+  let pointer = document.querySelectorAll(".pointer")
+  function mouseMove(e) {
+    let x = e.clientX
+    let y = e.clientY
+    pointer.forEach(function (cursor) {
+      cursor.style.left = x + "px"
+      cursor.style.top = y + "px"
+    })
+  }
+
  
   return (
    <>
@@ -46,6 +56,10 @@ const App = () => {
           
         </Routes>
       </BrowserRouter>
+      <div className="trail">
+	      <div className="pointer pointer1">☺</div>
+      </div>
+
    </>
   )
 }
