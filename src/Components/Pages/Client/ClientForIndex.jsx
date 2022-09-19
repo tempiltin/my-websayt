@@ -1,7 +1,7 @@
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
-import imgbg from '../../../images/ban11.jpg'
+
 const ClientForIndex = () => {
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
@@ -97,7 +97,7 @@ return (
         />
     );
 
-    />
+  
      </main>
     </>
 );
