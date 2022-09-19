@@ -12,7 +12,10 @@ import ResetPasword from './Components/Pages/Auth/ResetPasword';
 import AdminLayout from './Components/Pages/Layout/AdminLayout';
 import HomePage from './Components/Pages/Admin/HomePage';
 import Client from './Components/Pages/Layout/Client';
+import ClientForWebPage from './Components/Pages/Client/ClientForWebPage';
 // import ClientLogin from "./Components/ClientLogin";
+import { useState } from 'react';
+
 
 const App = () => {
   // const [user , setUser] = useState(null);
@@ -21,25 +24,21 @@ const App = () => {
   //     setUser(user)
   //   },[])
   // })
+  const [load , setLoad] = useState(false)
 
-  document.addEventListener("mousemove", mouseMove)
-  let pointer = document.querySelectorAll(".pointer")
-  function mouseMove(e) {
-    let x = e.clientX
-    let y = e.clientY
-    pointer.forEach(function (cursor) {
-      cursor.style.left = x + "px"
-      cursor.style.top = y + "px"
-    })
-  }
+ window.addEventListener("load",()=>{
+  setLoad(true)
+ })
 
  
   return (
    <>
+     <div className={load ? "loadtrue true" : "loadfalse false"}><h4 className='load'>Loading ...</h4></div>
       <BrowserRouter>
         <Routes >
         <Route path={'/'} element={<Client />}>
                 <Route index element={<ClientForIndex  />} />
+                <Route path='/web-page' element={<ClientForWebPage />}/>
               </Route>
           {/* Auth */}
           <Route path='/auth' element={<Layout />}>
@@ -56,9 +55,7 @@ const App = () => {
           
         </Routes>
       </BrowserRouter>
-      <div className="trail">
-	      <div className="pointer pointer1"></div>
-      </div>
+   
 
    </>
   )

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap');
+body{
+	font-family: "M PLUS Rounded 1c",sans-serif !important;
+}
+.loadtrue{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100000000000000000000;
+	.load{
+		font-size: 60px;
+		color: #ffde22;
+	}
+
+
+}
+.loadfalse{
+	display: none;
+}
+.starting{
+	text-align: center;
+}
+nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	background: #ffde22;
+	transition: all 900ms !important;
+}
+.fixed-categories{
+
+	transform: scale(1);
+	
+}
+.categories-nav{
+
+	top: -100px;
+    transform: scale(0);
+}
+.main{
+	width: 100%;
+	height: 100vh;
+    // background: url("./images/ban11.jpg") no-repeat center center / cover;
+	background: black;
+	.posit{
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50% , -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		a{
+			transition: 900ms;
+			font-size: 32px;
+			text-decoration: none;
+			padding: 10px 60px;
+			border: 5px solid #ffde22;
+			font-weight: 900;
+			border-radius: 8px;
+			color: #ffde22;
+			&:hover{
+				background-color: #ffde22;
+				color: black;
+			}
+		}
+		// h1{
+		// 	color: #ffde22;
+		// 	font-size: 96px;
+		// 	text-align: center;
+		// 	cursor: pointer;
+		// 	span{
+		// 		color: white;
+		// 	}
+		// }
+		// h1[tempiltin]::before{
+		// 	content: attr(tempiltin);
+		// 	color: white;
+		// 	display: block;
+		// 	position: absolute;
+		// 	left: 24%;
+		// 	top: -30px;
+		// }
+	}
+}
+section{
+	height: 200vh;
+}

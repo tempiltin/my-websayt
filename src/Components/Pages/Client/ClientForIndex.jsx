@@ -1,13 +1,11 @@
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
+import { Link } from "react-router-dom";
+
 
 const ClientForIndex = () => {
   const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
-    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
 }, []);
 
@@ -18,6 +16,9 @@ const particlesLoaded = useCallback(async (container) => {
 return (
     <>
      <main className="main">
+        <div className="posit">
+            <Link to={"/web-page"} className={"starting"}>Start !</Link>
+        </div>
      <Particles
             id="tsparticles"
             init={particlesInit}
@@ -28,7 +29,7 @@ return (
                         value: "transparent",
                     },
                 },
-                fpsLimit: 120,
+                fpsLimit: 60,
                 interactivity: {
                     events: {
                         onClick: {
@@ -47,20 +48,20 @@ return (
                         },
                         repulse: {
                             distance: 200,
-                            duration: 0.4,
+                            duration: 1,
                         },
                     },
                 },
                 particles: {
                     color: {
-                        value: "#ffff00",
+                        value: "#ffde22",
                     },
                     links: {
-                        color: "#ffff00",
+                        color: "#ffde22",
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
-                        width: 1,
+                        width: 0.5,
                     },
                     collisions: {
                         enable: true,
@@ -72,15 +73,15 @@ return (
                             default: "bounce",
                         },
                         random: false,
-                        speed: 6,
+                        speed: 2,
                         straight: false,
                     },
                     number: {
                         density: {
                             enable: true,
-                            area: 800,
+                            area: 1000,
                         },
-                        value: 80,
+                        value: 200,
                     },
                     opacity: {
                         value: 0.5,
@@ -89,16 +90,16 @@ return (
                         type: "circle",
                     },
                     size: {
-                        value: { min: 1, max: 5 },
+                        value: { min: 1, max: 2 },
                     },
                 },
                 detectRetina: true,
             }}
         />
-    );
 
-  
+      
      </main>
+
     </>
 );
 }

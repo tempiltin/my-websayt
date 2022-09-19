@@ -1,40 +1,82 @@
-.main{
-    width: 100%;
-    height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap");
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif !important;
 }
 
-.pointer{
-	position:absolute;
-	top:50%;
-	left:50%;
-    padding: 30px;
-    border: 2px solid yellow;
-    border-radius: 50%;
-	color:red;
-	font-size:40px;
-	/* user-select:none; */
-	transform:translate(-50%, -50%);
-	width:40px;
-	height:40px;
-	box-sizing:border-box;
-	transition:0.2s;
+.loadtrue {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000000000000000000;
+}
+.loadtrue .load {
+  font-size: 60px;
+  color: #ffde22;
 }
 
-.pointer1{
-	transition:0.05s;
+.loadfalse {
+  display: none;
 }
-.pointer2{
-	transition:0.1s;
+
+.starting {
+  text-align: center;
 }
-.pointer3{
-	transition:0.15s;
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #ffde22;
+  transition: all 900ms !important;
 }
-.pointer4{
-	transition:0.2s;
+
+.fixed-categories {
+  transform: scale(1);
 }
-.pointer5{
-	transition:0.25s;
+
+.categories-nav {
+  top: -100px;
+  transform: scale(0);
 }
-.main{
-    background: url("./images/ban11.jpg");
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background: black;
 }
+.main .posit {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .posit a {
+  transition: 900ms;
+  font-size: 32px;
+  text-decoration: none;
+  padding: 10px 60px;
+  border: 5px solid #ffde22;
+  font-weight: 900;
+  border-radius: 8px;
+  color: #ffde22;
+}
+.main .posit a:hover {
+  background-color: #ffde22;
+  color: black;
+}
+
+section {
+  height: 200vh;
+}/*# sourceMappingURL=index.css.map */
