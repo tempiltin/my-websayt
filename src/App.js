@@ -14,7 +14,7 @@ import HomePage from './Components/Pages/Admin/HomePage';
 import Client from './Components/Pages/Layout/Client';
 import ClientForWebPage from './Components/Pages/Client/ClientForWebPage';
 // import ClientLogin from "./Components/ClientLogin";
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 const App = () => {
@@ -24,16 +24,17 @@ const App = () => {
   //     setUser(user)
   //   },[])
   // })
-  const [load , setLoad] = useState(false)
+//   const [load , setLoad] = useState(false)
 
- window.addEventListener("load",()=>{
-  setLoad(true)
- })
+//  window.addEventListener("load",()=>{
+//   setLoad(true)
+//  })
 
  
   return (
    <>
-     <div className={load ? "loadtrue true" : "loadfalse false"}><h4 className='load'>Loading ...</h4></div>
+
+     {/* <div className={load ? "loadtrue true" : "loadfalse false"}><h4 className='load'>Loading ...</h4></div> */}
       <BrowserRouter>
         <Routes >
         <Route path={'/'} element={<Client />}>
