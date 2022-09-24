@@ -13,6 +13,9 @@ import AdminLayout from './Components/Pages/Layout/AdminLayout';
 import HomePage from './Components/Pages/Admin/HomePage';
 import Client from './Components/Pages/Layout/Client';
 import ClientForWebPage from './Components/Pages/Client/ClientForWebPage';
+import { AuthContextProvider } from './Components/Context/AuthContect';
+import SignInUser from './Components/Context/SignInUser';
+import Protected from './Components/Pages/Client/NavbarClient/Protected';
 // import ClientLogin from "./Components/ClientLogin";
 // import { useState } from 'react';
 
@@ -36,11 +39,17 @@ const App = () => {
 
      {/* <div className={load ? "loadtrue true" : "loadfalse false"}><h4 className='load'>Loading ...</h4></div> */}
       <BrowserRouter>
+          <AuthContextProvider>
         <Routes >
-        <Route path={'/'} element={<Client />}>
-                <Route index element={<ClientForIndex  />} />
-                <Route path='/web-page' element={<ClientForWebPage />}/>
+          
+              <Route path={'/'} element={<Client />}>
+                <Route index element={<Protected ><ClientForIndex  /></Protected>} />
+                <Route path={'/web-page-particle'} element={<ClientForWebPage />}/>
+
               </Route>
+                <Route path={'/sign-in'} element={<SignInUser />}/>
+        
+    
           {/* Auth */}
           <Route path='/auth' element={<Layout />}>
             <Route path='contact'  element={<Contact />} />
@@ -55,6 +64,7 @@ const App = () => {
           {/* Client page */}
           
         </Routes>
+        </AuthContextProvider>
       </BrowserRouter>
    
 
