@@ -2,11 +2,9 @@ import React from 'react'
 
 const ClientForIndex = () => {
   return (
-    <div>
-        
+      <main className='indexMain'>
 
-        as
-    </div>
+      </main>
   )
 }
 

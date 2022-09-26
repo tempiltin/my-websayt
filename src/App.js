@@ -16,6 +16,7 @@ import ClientForWebPage from './Components/Pages/Client/ClientForWebPage';
 import { AuthContextProvider } from './Components/Context/AuthContect';
 import SignInUser from './Components/Context/SignInUser';
 import Protected from './Components/Pages/Client/NavbarClient/Protected';
+import WeatherApp from './Components/Pages/Client/WeatherApp';
 // import ClientLogin from "./Components/ClientLogin";
 // import { useState } from 'react';
 
@@ -44,9 +45,10 @@ const App = () => {
           
               <Route path={'/'} element={<Client />}>
                 <Route index element={<Protected ><ClientForIndex  /></Protected>} />
-                <Route path={'/web-page-particle'} element={<ClientForWebPage />}/>
-
+                <Route path={'web-page-particle'} element={<ClientForWebPage />}/>
+                 
               </Route>
+                <Route path={"/weather-app"} element={<WeatherApp />} />
                 <Route path={'/sign-in'} element={<SignInUser />}/>
         
     

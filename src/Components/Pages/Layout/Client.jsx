@@ -6,9 +6,9 @@ import Navbar from '../Client/NavbarClient/Navbar'
 const Client = () => {
     return (
         <>
+        
         <Navbar />
-        <CssBaseline />
-   
+         <CssBaseline />
         <Outlet />
         </>
        )

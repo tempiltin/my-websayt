@@ -8,25 +8,19 @@ const SignInUser = () => {
     const navigate = useNavigate()
     const { googleSignIn , user } = UserAuth();
     const handleGoogleSignIn = async () => {
-        try {
-            await googleSignIn()
-            navigate('/')
-        } catch (error) {
-            console.error(error);
-        }
+        try { await googleSignIn(); navigate('/')
+        } catch (error) {console.error(error);}
     }
 
     useEffect(()=>{
-        if(user != null){
-            navigate("/");
-        };
+        if(user != null) navigate("/");
     },[navigate, user])
 
     return (
-        <div className="container">
-            <div className="row mt-5">
-                <div className="col-auto">
-                    <h1 className='mb-4'>Sign-In</h1>
+        <div className="container mt-5">
+            <div className="row mt-5 justify-content-around align-content-center">
+                <div className="col-auto mt-5 ">
+                    <h1 className='mb-4 text-bg-danger align-items-center'>Sign-In</h1>
                     <GoogleButton onClick={handleGoogleSignIn} />
                 </div>
             </div>
@@ -34,4 +28,4 @@ const SignInUser = () => {
     )
 }
 
-export default SignInUser
+export default SignInUser;

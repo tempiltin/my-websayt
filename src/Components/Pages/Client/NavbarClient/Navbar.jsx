@@ -1,7 +1,7 @@
 import { AppBar, Avatar, Box, Button, Chip, Skeleton, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { UserAuth } from '../../../Context/AuthContect'
 
 const Navbar = () => {
@@ -24,7 +24,7 @@ const Navbar = () => {
                 <AppBar position="static" color="secondary">
                     <Toolbar>
                         <Typography variant="h5" component={"div"} sx={{ flexGrow: 1 }}>
-                         Temurbek Shukurov
+                         Tempiltin
                         </Typography>
 
                         {user?.displayName ?
